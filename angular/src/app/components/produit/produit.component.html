@@ -1,0 +1,81 @@
+<!--
+<div class="container">
+  <div class="row">
+    <form #produitF="ngForm">
+    <div class="col">
+      <div id="register">
+        <h1>Créer Un Compte</h1>
+        <br>
+          <input type="text" placeholder="Libelé" ngModel name="lib" required><br>
+          <input type="text" placeholder="Description" ngModel name="description" required><br>
+          <input list="categorie" placeholder="Categorie" ngModel name="categorie" required>
+          <datalist id="categorie">
+            <option *ngFor="let c of this.cat" value="{{c.lib}}">
+          </datalist><br>
+          <input list="laboratoire" placeholder="Laboratoire" ngModel name="laboratoire" required>
+          <datalist id="laboratoire">
+            <option *ngFor="let l of lab" value="{{l.lib}}">
+          </datalist><br>
+          <input type="number" placeholder="Prix" ngModel name="prix" required><br>
+          <input type="number" placeholder="Prix de Livraison" ngModel name="prixLiv" required><br>
+      </div>
+    </div>
+    <div class="col">
+      <input class="submit-btn" type="submit" value="Ajouter" #ajout (click)="add(produitF)">
+      <input class="submit-btn" type="submit" value="Modifier" #modif (click)="update()">
+      <input class="submit-btn" type="submit" value="Supprimer" #supp (click)="delete()">
+    </div>
+    </form>
+    <div class="input-group">
+      <input type="text" #search (change)="chercher(search.value)"/>
+      <button type="button" class="btn btn-outline-primary">search</button>
+    </div>
+    <div class="col">
+      <table id="list">
+        <tr class="menu">
+          <td><input type="checkbox"></td>
+          <td>Id</td>
+          <td>Libelé</td>
+          <td>Prix</td>
+        </tr>
+        <tr *ngFor="let p of prdList" class="produit" #produit>
+          <td><input type="checkbox" for="produit" (click)="onCheck(p)"></td>
+          <td class="attributes">{{p.id}}</td>
+          <td class="attributes">{{p.lib}}</td>
+          <td class="attributes">{{p.prix}}</td>
+          <button (click)="modifier(p)">aaaaaaaaaaaa</button>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>-->
+<div align="center">
+<div>
+  <input type="text" placeholder="Chercher" #search (change)="chercher(search.value)"/>
+  <button (click)="ajout()">Ajouter</button>
+</div>
+<table class="styled-table">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Libelé</th>
+    <th>Prix</th>
+    <th>Prix Livraison</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let p of prdList">
+    <td class="attributes">{{p.id}}</td>
+    <td class="attributes">{{p.lib}}</td>
+    <td class="attributes">{{p.prix}}</td>
+    <td class="attributes">{{p.prixLiv}}</td>
+    <td>
+      <button (click)="modifier(p)">Modifier</button>
+      <button (click)="delete(p)">Supprimer</button>
+      <button (click)="desc(p)">Description</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</div>

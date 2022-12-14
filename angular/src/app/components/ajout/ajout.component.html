@@ -1,0 +1,20 @@
+<div class="container">
+  <br>
+  <h1>Ajouter</h1>
+  <form #ProduitF="ngForm" (ngSubmit)="add(ProduitF)">
+    <input type="text" placeholder="Libelé" ngModel name="lib" required><br>
+    <input type="text" placeholder="Description"  ngModel name="description" required><br>
+    <input list="categorie" placeholder="Categorie"  ngModel name="categorie" required>
+    <datalist id="categorie">
+      <option *ngFor="let c of this.cat" >
+    </datalist><br>
+    <input list="laboratoire" placeholder="Laboratoire"  ngModel name="laboratoire" required>
+    <datalist id="laboratoire">
+      <option *ngFor="let l of lab" value="{{l.lib}}">
+    </datalist><br>
+    <input type="number" placeholder="Prix"  ngModel name="prix" required><br>
+    <input type="number" placeholder="Prix de Livraison"  ngModel name="prixLiv" required><br>
+    <button type="submit">Ajouter</button>
+  </form>
+</div>
+

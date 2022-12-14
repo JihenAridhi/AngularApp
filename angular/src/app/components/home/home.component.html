@@ -1,0 +1,41 @@
+<div id="container">
+  <!-- Cover Box -->
+  <div id="cover">
+    <!-- Sign Up Section -->
+    <h1 class="sign-up">Bonjour</h1>
+    <p class="sign-up">Registrer Votre Informations<br> Commancer</p>
+    <a class="button sign-up" href="#cover">S'Inscrire</a>
+    <!-- Sign In Section -->
+    <h1 class="sign-in">Bienvenue</h1><br>
+    <p class="sign-in">Entrer Votre Informations</p>
+    <br>
+    <a class="button sub sign-in" href="#">Entrer</a>
+  </div>
+  <!-- Login Box -->
+  <div id="login">
+    <h1>Bienvenue</h1>
+    <br><br><br>
+    <form #loginF="ngForm" (ngSubmit)="login(loginF)">
+      <input type="email" placeholder="Email" ngModel name="email"><br>
+      <input type="password" placeholder="Password" ngModel name="motDePasse"><br>
+      <input class="submit-btn" type="submit" value="Sign In" >
+    </form>
+  </div>
+  <!-- Register Box -->
+  <div id="register">
+    <h1>Créer Un Compte</h1>
+    <br>
+    <form #addF="ngForm" (ngSubmit)="add(addF)">
+      <input type="text" placeholder="Nom" ngModel name="nom" required><br>
+      <input type="text" placeholder="Prenom" ngModel name="prenom" required><br>
+      <input type="email" placeholder="Email" ngModel name="email" required><br>
+      <input type="password" placeholder="Mot De Passe" ngModel name="motDePasse" required><br>
+      <input type="Date" placeholder="Date De Naissance" ngModel name="naissance" required><br>
+      <input type="text" placeholder="Addresse" ngModel name="addresse"><br>
+      <input type="number" placeholder="Code Postal" maxlength="4" ngModel name="codePostal" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"><br>
+      <input class="submit-btn" type="submit" value="S'inscrire" >
+    </form>
+  </div>
+</div> <!-- END Container -->
+
+

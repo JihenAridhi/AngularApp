@@ -1,0 +1,31 @@
+<div align="center">
+  <div>
+    <input type="text" placeholder="Chercher" #search (change)="chercher(search.value)"/>
+    <button (click)="ajout()">Ajouter</button>
+  </div>
+  <table class="styled-table">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nom</th>
+      <th>Email</th>
+      <th>Addresse</th>
+      <th>Tel</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let f of frsList">
+      <td class="attributes">{{f.id}}</td>
+      <td class="attributes">{{f.nom}}</td>
+      <td class="attributes">{{f.email}}</td>
+      <td class="attributes">{{f.addresse}}</td>
+      <td class="attributes">{{f.tel}}</td>
+      <td>
+        <button (click)="modifier(f)">Modifier</button>
+        <button (click)="delete(f)">Supprimer</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
